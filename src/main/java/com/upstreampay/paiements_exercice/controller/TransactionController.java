@@ -8,13 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import org.apache.log4j.Logger;
-
 @RestController
 @RequestMapping("/transaction")
 public class TransactionController {
-
-    private static Logger logger = Logger.getLogger(TransactionController.class);
     @Autowired
     private TransactionService transactionService;
 

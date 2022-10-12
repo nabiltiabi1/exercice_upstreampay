@@ -54,10 +54,4 @@ public class TransactionService {
     public Mono<Void> delete(String id) {
         return repository.deleteById(id);
     }
-
-   /* static Mono<Transaction> validateState(Transaction transaction, TransactionDto transactionDto){
-        return (transactionDto.getState().equalsIgnoreCase(String.valueOf(TransactionState.NEW)) && transaction.getState().equalsIgnoreCase(String.valueOf(TransactionState.NEW)) )
-                || !transaction.getState().equalsIgnoreCase(TransactionState.NEW.toString()) ? Mono.just(transaction) : Mono.error(new UnAuthorizedException("Action not authorized"));
-    }*/
-
 }
