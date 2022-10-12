@@ -42,7 +42,7 @@ public class TransactionService {
 
     public Mono<TransactionDto> update(String id, TransactionState stateToCheck, TransactionState stateToUpdate) {
         return repository.findByIdAndState(id, stateToCheck)
-                        .switchIfEmpty(Mono.error(new UpdateStateException("Transaction not found with given id and state")))
+                        .switchIfEmpty(Mono.error(new UpdateStateException("Transaction not found or state not accepted")))
                         .map(transaction -> {
                             transaction.setState(stateToUpdate);
                             return transaction;
